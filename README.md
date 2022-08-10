@@ -30,6 +30,8 @@
 
 https://drive.google.com/drive/folders/1mKajP35NChMTJ1dqIzD9J-z2QNvqJXlo?usp=sharing
 
+from Jan 1st 2022 to June 30th 2022
+
 ## Related Links
 PEMS-BAY data was first used in https://github.com/liyaguang/DCRNN, which contained observations from Jan 1st 2017 to May 31th 2017.
 

@@ -32,3 +32,7 @@ https://drive.google.com/drive/folders/1mKajP35NChMTJ1dqIzD9J-z2QNvqJXlo?usp=sha
 
 ## Related Links
 PEMS-BAY data was first used in https://github.com/liyaguang/DCRNN, which contained observations from Jan 1st 2017 to May 31th 2017.
+
+
+## Notes
+Sensors ['401495', '402288', '402289', '402368', '402369', '404554'] doesn't have observations at all.

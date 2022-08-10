@@ -1,4 +1,4 @@
-# PemsBay2022
+# PeMS-BAY-2022
 
 ## Preprocessing codes for Pems-BAY-2022 dataset
 

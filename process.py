@@ -27,7 +27,8 @@ sensor_ids, sensor_id_to_ind, adj_mx = load_pickle("./adj_mx_bay.pkl")
 
 target_sensors = sensor_ids
 
-paths = ["raw_data/01", "raw_data/02", "raw_data/03"]
+paths = os.listdir("raw_data")
+paths = [os.path.join("raw_data", p) for p in paths]
 for path in paths:
     for file0 in (pbar := tqdm(os.listdir(path))):
         with gzip.open(f'{path}/{file0}', 'rb') as f_in:
@@ -73,48 +74,13 @@ for path in paths:
         pbar.set_description(f"Processing {file0} - NaNs: {none_list}\n")
 
 
-(data == 0).sum(-1).sum(-1)
-
-
 processed_data = os.listdir('processed_data')
 final_out = np.zeros((288*len(processed_data), len(target_sensors), 3))
 for i in range(len(processed_data)):
     data = np.load(f'processed_data/{processed_data[i]}')
     final_out[i*288:(i+1)*288, :, :] = data
 
-plt.plot((final_out[:, :, 1] == 0).sum(1)-5)
-plt.ylim(0, 10)
-
-[target_sensors[i] for i in np.where((final_out[:, :, 1] == 0).sum(0) > 300)[0]]
+# plt.plot((final_out[:, :, 1] == 0).sum(1))
+# plt.ylim(0, 10)
 
 np.save('PEMSBAY_2022.npy', final_out)
-
-plt.plot(final_out[:1000, 8, 0])
-
-# target_sensors = ['404444',
-#                   '400582',
-#                   '400097',
-#                   '401224',
-#                   '400828',
-#                   '400648',
-#                   '404434',
-#                   '400222',
-#                   '400952',
-#                   '401210',
-#                   '400507',
-#                   '400185']
-# target_sensor_inds = [sensor_id_to_ind[i] for i in target_sensors]
-# sensor_12 = final_out[:, target_sensor_inds, :]
-
-
-np.isnan(final_out).sum(-1).sum(-1).sum(-1)
-
-
-out = np.load('PEMSBAY_2022.npy')
-
-out.shape
-df = pd.read_hdf("./pems-bay.h5")
-
-(df.values == 0).sum(0)
-
-(final_out[:, :, 1] == 0).sum(0)

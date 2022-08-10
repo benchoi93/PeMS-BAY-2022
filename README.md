@@ -12,7 +12,9 @@
   
     1-4. Click files in "Available Files"
   
-    1-5. make a folder named "raw_data" and put the downloaded files.
+    1-5. make a folder named "raw_data" and make folders by month ex) 01, 02, 03, ...
+    
+    1-6. put the downloaded files in the folders
   
 2. Step 2 : Preprocess
 

@@ -22,3 +22,8 @@
   ```
   
 3. Step 3 : Enjoy
+
+
+## Download preprocessed data
+
+https://drive.google.com/drive/folders/1mKajP35NChMTJ1dqIzD9J-z2QNvqJXlo?usp=sharing
